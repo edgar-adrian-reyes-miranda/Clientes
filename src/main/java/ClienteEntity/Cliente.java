@@ -1,11 +1,13 @@
 package ClienteEntity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
 
 import java.util.Date;
 
 @Entity
-@Table(name="clientes", schema = "public")
+@Table(name="clientes")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +18,17 @@ public class Cliente {
     private Date createAt;
     @ManyToOne(fetch= FetchType.LAZY)
     @JoinColumn(name= "tipoCliente_id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     private TipoCliente tipoCliente;
+
+    public Cliente(){}
+
+    public Cliente(String nombre, String apellido, String email, Date createAt) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.createAt = createAt;
+    }
 
     public TipoCliente getTipoCliente() {
         return tipoCliente;

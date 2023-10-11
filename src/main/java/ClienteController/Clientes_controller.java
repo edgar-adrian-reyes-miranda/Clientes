@@ -1,7 +1,7 @@
 package ClienteController;
 import ClienteDTO.ClientesDto;
 import ClienteEntity.Cliente;
-import ClineteServices.ClienteServicio;
+import ClienteServicio.ClienteServicio;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

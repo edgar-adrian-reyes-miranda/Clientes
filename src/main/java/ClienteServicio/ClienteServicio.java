@@ -1,4 +1,4 @@
-package ClineteServices;
+package ClienteServicio;
 
 import ClienteDTO.ClientesDto;
 import ClienteEntity.Cliente;
